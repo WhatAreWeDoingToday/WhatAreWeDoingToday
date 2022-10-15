@@ -1,10 +1,10 @@
+import axios from "axios";
 
-async function seatGeekAPI(){
+export const seatGeekAPI = async () => {
+  let SEATGEEK_API = process.env.REACT_APP_SEATGEEK_API;
+  let URL = `https://api.seatgeek.com/2/events?client_id=${SEATGEEK_API}&lat=40.7484&lon=-73.9857&range=150mi`;
 
-    let SEATGEEK_API = process.env.SEATGEEK_API;
-    let URL = `https://api.seatgeek.com/2/events?client_id=${SEATGEEK_API}=40.7484&lon=-73.9857&range=150mi`;
+  let response = await axios.get(URL);
 
-    let response = await fetch(URL, {mode: "cors"});
-
-
-}
+  console.log(response.data);
+};
