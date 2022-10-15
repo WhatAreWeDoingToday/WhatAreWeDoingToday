@@ -19,7 +19,7 @@ const Checkboxes = () => {
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
-      <div>
+      <div class = 'category'>
         <input
           type="checkbox"
           id="artsy"
@@ -28,7 +28,7 @@ const Checkboxes = () => {
         />
         <label htmlFor="artsy">Feeling artsy?</label>
       </div>
-      <div>
+      <div class = 'category'>
         <input
           type="checkbox"
           id="alcohol"
@@ -37,7 +37,7 @@ const Checkboxes = () => {
         />
         <label htmlFor="alcohol">Feeling tipsy?</label>
       </div>
-      <div>
+      <div class = 'category'>
         <input
           type="checkbox"
           id="outdoorsy"
@@ -46,7 +46,7 @@ const Checkboxes = () => {
         />
         <label htmlFor="outdoorsy">Feeling outdoorsy?</label>
       </div>
-      <div>
+      <div class = 'category'>
         <input
           type="checkbox"
           id="indoorsy"
