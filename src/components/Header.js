@@ -3,7 +3,7 @@ import '../styling/App.css';
 
 const Header = () => {
   return (
-    <div class = "header">
+    <div className = "header">
       <h1>What Are We Doing Today?</h1>
     </div>
   );
