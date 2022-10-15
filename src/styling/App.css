@@ -97,12 +97,18 @@ form {
 }
 
 .category{
-  margin: 4px;
-  background-color: #104068;
-  border-radius: 4px;
+  margin: .5rem;
+  background-color: transparent;
+  padding: 0.5rem;
+  border-radius: 1rem;
   border: 1px solid #fff;
   overflow: hidden;
   float: left;
+}
+
+.category label {
+  float: left; line-height: 1.5em;
+  width: 8.0em; height: 1.5em;
 }
 
 input {

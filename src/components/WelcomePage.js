@@ -5,8 +5,8 @@ import '../styling/App.css';
 
 const WelcomePage = () => {
   return (
-    <div class = 'welcome'>
-      <div class = 'select-card'>
+    <div className = 'welcome'>
+      <div className = 'select-card'>
         <Header />
         <Checkboxes />
       </div>
