@@ -1,13 +1,11 @@
 // import logo from './logo.svg';
 import React from 'react';
 import AllRoutes from './components/AllRoutes';
-import Header from './components/Header';
 import './styling/App.css';
 
 function App() {
   return (
     <div>
-      <Header />
       <AllRoutes />
       {/* footer here */}
     </div>
