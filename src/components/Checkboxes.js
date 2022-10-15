@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Checkboxes = () => {
+  const navigate = useNavigate();
+
   const [art, setArt] = useState(false);
   const [alcohol, setAlcohol] = useState(false);
   const [outdoor, setOutdoor] = useState(false);
@@ -11,13 +14,8 @@ const Checkboxes = () => {
 
     //create list from state
 
-    //move to next page
+    navigate('/activity', { state: { art, alcohol, outdoor, indoor } });
   };
-
-  console.log('art', art);
-  console.log('alcohol', alcohol);
-  console.log('outdoor', outdoor);
-  console.log('indoor', indoor);
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
