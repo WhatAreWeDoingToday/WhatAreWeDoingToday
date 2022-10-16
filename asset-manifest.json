@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/WhatAreWeDoingToday/static/css/main.78239e90.css",
+    "main.js": "/WhatAreWeDoingToday/static/js/main.0324bab3.js",
+    "static/js/787.28cb0dcd.chunk.js": "/WhatAreWeDoingToday/static/js/787.28cb0dcd.chunk.js",
+    "static/media/spinning-arrow.jpg": "/WhatAreWeDoingToday/static/media/spinning-arrow.8237ec560bbd6c5365e5.jpg",
+    "index.html": "/WhatAreWeDoingToday/index.html",
+    "main.78239e90.css.map": "/WhatAreWeDoingToday/static/css/main.78239e90.css.map",
+    "main.0324bab3.js.map": "/WhatAreWeDoingToday/static/js/main.0324bab3.js.map",
+    "787.28cb0dcd.chunk.js.map": "/WhatAreWeDoingToday/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78239e90.css",
+    "static/js/main.0324bab3.js"
+  ]
+}
