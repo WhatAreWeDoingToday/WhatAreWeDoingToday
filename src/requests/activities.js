@@ -8,7 +8,7 @@ export const seatGeekAPI = async () => {
     );
     return response.data;
   } catch (error) {
-    console.error("💀", error);
+    console.error("SEATGEEK💀", error);
   }
 };
 
@@ -29,7 +29,7 @@ export const npsAPI = async () => {
     );
     return response.data;
   } catch (error) {
-    console.error("💀", error);
+    console.error("NPS💀", error);
   }
 };
 
@@ -48,9 +48,32 @@ export const recreationalAPI = async () => {
     const response = await axios.get(
       `https://ridb.recreation.gov/api/v1/recareas?limit=50&offset=0&state=NY&lastupdated=10-01-2018&apikey=${RECREATIONAL_API}`
     );
+    return response.data;
+  } catch (error) {
+    console.error("RECREATIONAL💀", error);
+  }
+};
+/**
+ "RECDATA": [
+    {"RecAreaName":
+    "RecAreaDirections": 
+  */
+
+export const breweryAPI = async () => {
+  try {
+    const response = await axios.get(
+      "https://api.openbrewerydb.org/breweries?by_state=new_york"
+    );
     console.log(response.data);
     return response.data;
   } catch (error) {
-    console.error("💀", error);
+    console.error("BREWERY💀", error);
   }
 };
+/*
+objs in an array
+name": "12 Gates Brewing Company",
+website_url": "http://www.12gatesbrewing.com",
+  "city": "Williamsville",
+    "state": "New York",
+*/
