@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from './Loading';
 
 const BasicInfo = ({ handleNextClick, activity }) => {
   const words = [
@@ -34,7 +35,9 @@ const BasicInfo = ({ handleNextClick, activity }) => {
       </button>
     </div>
   ) : (
-    <div className="basicInfo"></div>
+    <div className="basicInfo">
+      <Loading />
+    </div>
   );
 };
 
