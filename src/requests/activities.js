@@ -33,9 +33,16 @@ export const npsAPI = async () => {
     );
     console.log(response.data);
     console.log(
-      response.data.map((park) => {
+      response.data.data.map((park) => {
         return {
           type: "PARK",
+          time: null,
+          place: null,
+          website: park.url,
+          location: "NY",
+          name: park.fullName,
+          description: park.description,
+          cost: false,
         };
       })
     );
@@ -44,15 +51,6 @@ export const npsAPI = async () => {
     console.error("NPS💀", error);
   }
 };
-
-/*
-"url": "https://www.nps.gov/afbg/index.htm",
-"description": 
-"fullName": "African Burial Ground National Monument",
-"entranceFees": [
-        {
-          "cost": "0.00",
-*/
 
 export const recreationalAPI = async () => {
   try {
