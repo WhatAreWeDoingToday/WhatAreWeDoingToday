@@ -2,9 +2,11 @@ import React from 'react';
 
 const BasicInfo = ({ handleNextClick }) => {
   return (
-    <div>
+    <div className ="basicInfo">
+      <h1>Suggestion</h1>
       <p>basic info</p>
-      <button type="button" onClick={handleNextClick}>
+      <div className = "horizontalSeperation"></div>
+      <button className = "skipButton" type="button" onClick={handleNextClick}>
         Not interested?
       </button>
     </div>
