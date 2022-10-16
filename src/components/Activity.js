@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import MoreInfo from "./MoreInfo";
-import BasicInfo from "./BasicInfo";
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import MoreInfo from './MoreInfo';
+import BasicInfo from './BasicInfo';
 import {
   seatGeekAPI,
   npsAPI,
   recreationalAPI,
   breweryAPI,
   artAPI,
-} from "../requests/activities";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { faRotateForward } from "@fortawesome/free-solid-svg-icons";
-import "../styling/App.css";
+} from '../requests/activities';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faRotateForward } from '@fortawesome/free-solid-svg-icons';
+import '../styling/App.css';
 
 const Activity = () => {
   const location = useLocation();
@@ -20,7 +20,7 @@ const Activity = () => {
 
   const [flipped, setFlipped] = useState(false);
   const [options, setOptions] = useState([]);
-  const [picked, setPicked] = useState({});
+  const [activity, setActivity] = useState({});
 
   const { art, alcohol, outdoor, indoor } = location.state;
 
@@ -52,12 +52,13 @@ const Activity = () => {
 
   useEffect(() => {
     if (options.length) pickActivity();
-  }, [options]); //whenever options update, this will run-hannah told yeji
+  }, [options]);
+  //whenever options update, this will run-hannah told yeji
 
   const pickActivity = () => {
     const max = options.length - 1;
     const num = Math.round(Math.random() * max);
-    setPicked(options[num]);
+    setActivity(options[num]);
   };
 
   const handleNextClick = () => {
@@ -69,7 +70,7 @@ const Activity = () => {
       <button
         className="backButton"
         type="button"
-        onClick={() => navigate("/")}
+        onClick={() => navigate('/')}
       >
         <FontAwesomeIcon icon={faChevronLeft} />
         Change your mind?
@@ -77,9 +78,9 @@ const Activity = () => {
 
       <div>
         {!flipped ? (
-          <BasicInfo handleNextClick={handleNextClick} />
+          <BasicInfo handleNextClick={handleNextClick} activity={activity} />
         ) : (
-          <MoreInfo />
+          <MoreInfo activity={activity} />
         )}
         <button
           className="flippedButton flipCard"
