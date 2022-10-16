@@ -27,7 +27,6 @@ export const npsAPI = async () => {
     const response = await axios.get(
       `https://developer.nps.gov/api/v1/parks?stateCode=ny&api_key=${NPS_API}`
     );
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error("💀", error);
@@ -42,3 +41,16 @@ export const npsAPI = async () => {
         {
           "cost": "0.00",
 */
+
+export const recreationalAPI = async () => {
+  try {
+    const RECREATIONAL_API = process.env.REACT_APP_RECREATIONAL_API;
+    const response = await axios.get(
+      `https://ridb.recreation.gov/api/v1/recareas?limit=50&offset=0&state=NY&lastupdated=10-01-2018&apikey=${RECREATIONAL_API}`
+    );
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error("💀", error);
+  }
+};

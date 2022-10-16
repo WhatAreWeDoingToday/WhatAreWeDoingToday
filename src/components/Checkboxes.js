@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { seatGeekAPI, npsAPI } from "../requests/activities";
+import { seatGeekAPI, npsAPI, recreationalAPI } from "../requests/activities";
 
 const Checkboxes = () => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const Checkboxes = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    npsAPI();
+    recreationalAPI();
     //create list from state
 
     navigate("/activity", { state: { art, alcohol, outdoor, indoor } });
