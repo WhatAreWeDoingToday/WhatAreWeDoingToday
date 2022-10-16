@@ -64,7 +64,6 @@ export const breweryAPI = async () => {
     const response = await axios.get(
       "https://api.openbrewerydb.org/breweries?by_state=new_york"
     );
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error("BREWERY💀", error);
@@ -77,3 +76,23 @@ website_url": "http://www.12gatesbrewing.com",
   "city": "Williamsville",
     "state": "New York",
 */
+
+export const artAPI = async () => {
+  try {
+    const response = await axios.get(
+      "https://data.cityofnewyork.us/resource/43hw-uvdj.json"
+    );
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error("ART💀", error);
+  }
+};
+/**
+ [
+  {
+    "the_geom": {
+        "name": "O'reilly William & Co Ltd",
+    "url": "http://www.nyc.com/arts__attractions/oreilly_william__co_ltd.806/whats_nearby.aspx",
+    city:
+ */

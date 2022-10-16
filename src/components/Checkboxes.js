@@ -5,6 +5,7 @@ import {
   npsAPI,
   recreationalAPI,
   breweryAPI,
+  artAPI,
 } from "../requests/activities";
 
 const Checkboxes = () => {
@@ -17,7 +18,7 @@ const Checkboxes = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    breweryAPI();
+    artAPI();
     //create list from state
 
     navigate("/activity", { state: { art, alcohol, outdoor, indoor } });
