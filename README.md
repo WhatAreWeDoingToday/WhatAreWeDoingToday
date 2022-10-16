@@ -21,8 +21,8 @@ This site was created using React.
 ## Developers :nerd_face:
 
 [Yeji](https://github.com/yejijang95) <br />
-[Hannah] (https://github.com/sommerh) <br />
-[Josephine] (https://github.com/jpho8799) <br />
+[Hannah](https://github.com/sommerh) <br />
+[Josephine](https://github.com/jpho8799) <br />
 
 ## Future Direction
 - Allow users to pick between free or paid events
