@@ -62,7 +62,10 @@ const Checkboxes = () => {
         />
         <label htmlFor="indoorsy">Feeling indoorsy?</label>
       </div>
-      <input type="submit" />
+      <div className = "horizontalSeperation"></div>
+      <div className = "buttonContainer">
+        <input className ="submitButton" type="submit" />
+      </div>
     </form>
   );
 };

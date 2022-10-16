@@ -72,6 +72,9 @@ html {
 }
 
 .select-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 30rem;
   width: 25rem;
   border-radius: 1rem;
@@ -90,13 +93,24 @@ html {
 }
 
 form {
-  height: 15rem;
+  height: 18rem;
   width: 20rem;
   margin: 1rem;
+  display: grid;
+  grid-template-areas: "checkbox checkbox"
+                        "checkbox checkbox"
+                        "seperation seperation"
+                        "button button";
+
+
+ grid-template-columns: 1fr 1fr;
+ grid-template-rows: 2fr 2fr 1fr 1fr;
 
 }
 
 .category{
+  text-align: center;
+  margin: auto;
   margin: .5rem;
   background-color: transparent;
   padding: 0.5rem;
@@ -109,9 +123,61 @@ form {
 .category label {
   float: left; line-height: 1.5em;
   width: 8.0em; height: 1.5em;
+  grid-area: checkbox;
 }
 
-input {
+.category input {
+  position: absolute;
+  color: #fff !important;
+  display: none;
+}
+
+.category label{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+input:checked ~label{
+
+  color: var(--neon-green);
 
 }
 
+.horizontalSeperation{
+
+  border-bottom: 1px solid lightgrey;
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%;
+  grid-area: seperation;
+
+}
+
+.buttonContainer{
+  grid-area: button;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+
+}
+
+.submitButton {
+
+  width: 6rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neon-green);
+  background-color: transparent;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border-color: var(--neon-green);
+
+}
