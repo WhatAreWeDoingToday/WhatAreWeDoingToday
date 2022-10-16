@@ -1,9 +1,9 @@
-import axios from "axios";
-import { seatGeekCapitalize } from "./helperFunctions";
+import axios from 'axios';
+import { seatGeekCapitalize } from './helperFunctions';
 
 export const seatGeekAPI = async () => {
   try {
-    const SEATGEEK_API = process.env.REACT_APP_SEATGEEK_API; //for .env, put REACT_APP_ before each key variable name
+    const SEATGEEK_API = process.env.REACT_APP_SEATGEEK_API;
     const response = await axios.get(
       `https://api.seatgeek.com/2/events?client_id=${SEATGEEK_API}&lat=40.7484&lon=-73.9857&range=150mi`
     );
@@ -21,7 +21,7 @@ export const seatGeekAPI = async () => {
       };
     });
   } catch (error) {
-    console.error("SEATGEEK💀", error);
+    console.error('SEATGEEK💀', error);
   }
 };
 
@@ -34,18 +34,18 @@ export const npsAPI = async () => {
 
     return response.data.data.map((park) => {
       return {
-        type: "PARK",
+        type: 'PARK',
         time: null,
         place: null,
         website: park.url,
-        location: "NY",
+        location: 'New York',
         name: park.fullName,
         description: park.description,
         cost: false,
       };
     });
   } catch (error) {
-    console.error("NPS💀", error);
+    console.error('NPS💀', error);
   }
 };
 
@@ -58,52 +58,52 @@ export const recreationalAPI = async () => {
 
     return response.data.RECDATA.map((park) => {
       return {
-        type: "PARK",
+        type: 'PARK',
         time: null,
         place: null,
         website: null,
-        location: "NY",
+        location: 'New York',
         name: park.RecAreaName,
         description: park.RecAreaDescription,
         cost: false,
       };
     });
   } catch (error) {
-    console.error("RECREATIONAL💀", error);
+    console.error('RECREATIONAL💀', error);
   }
 };
 
 export const breweryAPI = async () => {
   try {
     const response = await axios.get(
-      "https://api.openbrewerydb.org/breweries?by_state=new_york"
+      'https://api.openbrewerydb.org/breweries?by_state=new_york'
     );
 
     return response.data.map((brewery) => {
       return {
-        type: "BREWERY",
+        type: 'BREWERY',
         time: null,
         place: null,
         website: brewery.website_url,
         location: `${brewery.city}, NY`,
         name: brewery.name,
         description: null,
-        cost: true,
+        cost: false,
       };
     });
   } catch (error) {
-    console.error("BREWERY💀", error);
+    console.error('BREWERY💀', error);
   }
 };
 
 export const artAPI = async () => {
   try {
     const response = await axios.get(
-      "https://data.cityofnewyork.us/resource/43hw-uvdj.json?$limit=25"
+      'https://data.cityofnewyork.us/resource/43hw-uvdj.json?$limit=25'
     );
     return response.data.map((gallery) => {
       return {
-        type: "ART GALLERY",
+        type: 'ART GALLERY',
         time: null,
         place: null,
         website: gallery.url,
@@ -114,6 +114,6 @@ export const artAPI = async () => {
       };
     });
   } catch (error) {
-    console.error("ART💀", error);
+    console.error('ART💀', error);
   }
 };
