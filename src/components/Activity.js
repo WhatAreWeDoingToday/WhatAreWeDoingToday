@@ -57,16 +57,12 @@ const Activity = () => {
   const pickActivity = () => {
     const max = options.length - 1;
     const num = Math.round(Math.random() * max);
-    console.log("pick actvity");
     setPicked(options[num]);
   };
 
   const handleNextClick = () => {
-    console.log("handleNextClick");
     pickActivity();
   };
-
-  console.log(picked);
 
   return (
     <div className="activity">
