@@ -1,5 +1,12 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  seatGeekAPI,
+  npsAPI,
+  recreationalAPI,
+  breweryAPI,
+  artAPI,
+} from "../requests/activities";
 
 const Checkboxes = () => {
   const navigate = useNavigate();
@@ -11,15 +18,15 @@ const Checkboxes = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    artAPI();
     //create list from state
 
-    navigate('/activity', { state: { art, alcohol, outdoor, indoor } });
+    navigate("/activity", { state: { art, alcohol, outdoor, indoor } });
   };
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
-      <div className = 'category'>
+      <div className="category">
         <input
           type="checkbox"
           id="artsy"
@@ -28,7 +35,7 @@ const Checkboxes = () => {
         />
         <label htmlFor="artsy">Feeling artsy?</label>
       </div>
-      <div className = 'category'>
+      <div className="category">
         <input
           type="checkbox"
           id="alcohol"
@@ -37,7 +44,7 @@ const Checkboxes = () => {
         />
         <label htmlFor="alcohol">Feeling tipsy?</label>
       </div>
-      <div className = 'category'>
+      <div className="category">
         <input
           type="checkbox"
           id="outdoorsy"
@@ -46,7 +53,7 @@ const Checkboxes = () => {
         />
         <label htmlFor="outdoorsy">Feeling outdoorsy?</label>
       </div>
-      <div className = 'category'>
+      <div className="category">
         <input
           type="checkbox"
           id="indoorsy"
