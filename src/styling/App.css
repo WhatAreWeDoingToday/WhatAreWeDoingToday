@@ -177,7 +177,101 @@ input:checked ~label{
   color: var(--neon-green);
   background-color: transparent;
   padding: 0.5rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   border-color: var(--neon-green);
 
+}
+
+.activity{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--greyish-blue);
+
+}
+
+.backButton {
+  display: inline-block;
+  justify-content: space-between;
+  height: 2rem;
+  width: 15rem;
+  color: var(--neon-green);
+  background: transparent;
+  font-weight: bold;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+
+}
+
+.basicInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30rem;
+  width: 25rem;
+  border-radius: 1rem;
+  background-color: var(--dark-grayish-blue) ;
+  color: white;
+  box-shadow: var(--box-shadow);
+}
+
+.basicInfo h1 {
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.25rem;
+  color:hsl(150, 100%, 66%);
+  padding: 2.5rem;
+}
+
+.moreInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30rem;
+  width: 25rem;
+  border-radius: 1rem;
+  background-color: var(--dark-grayish-blue) ;
+  color: white;
+  box-shadow: var(--box-shadow);
+}
+
+.moreInfo h1 {
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.25rem;
+  color:hsl(150, 100%, 66%);
+  padding: 2.5rem;
+}
+
+.flippedButton {
+  position: relative;
+  left: 10.75rem;
+  bottom: 1.5rem;
+  height: 4rem;
+  width: 4rem;
+  border: 1px solid var(--neon-green);
+  background: transparent;
+  color: var(--neon-green);
+  border-radius: 50%;
+}
+
+.skipButton{
+  width: 6rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: transparent;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border-color: white;
+  margin-top: 1rem;
 }

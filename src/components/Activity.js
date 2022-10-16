@@ -9,6 +9,10 @@ import {
   breweryAPI,
   artAPI,
 } from "../requests/activities";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faRotateForward } from "@fortawesome/free-solid-svg-icons";
+import "../styling/App.css";
 
 const Activity = () => {
   const location = useLocation();
@@ -45,21 +49,29 @@ const Activity = () => {
     };
   }, []);
 
-  console.log(options);
-
   const handleNextClick = () => {
     //this will pick another activity based on current state
   };
 
   return (
-    <div>
-      <button type="button" onClick={() => navigate("/")}>
+    <div className="activity">
+      <button
+        className="backButton"
+        type="button"
+        onClick={() => navigate("/")}
+      >
+        <FontAwesomeIcon icon={faChevronLeft} />
         Change your mind?
       </button>
+
       <div>
         {!flipped ? <BasicInfo handleClick={handleNextClick} /> : <MoreInfo />}
-        <button type="button" onClick={() => setFlipped(!flipped)}>
-          Flip
+        <button
+          className="flippedButton flipCard"
+          type="button"
+          onClick={() => setFlipped(!flipped)}
+        >
+          <FontAwesomeIcon icon={faRotateForward} />
         </button>
       </div>
     </div>
