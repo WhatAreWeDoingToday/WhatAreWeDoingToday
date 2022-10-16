@@ -34,7 +34,7 @@ const Checkboxes = () => {
           checked={alcohol}
           onChange={() => setAlcohol(!alcohol)}
         />
-        <label htmlFor="alcohol">Feeling tipsy? 🍸</label>
+        <label htmlFor="alcohol">Feeling tipsy? 🍻</label>
       </div>
       <div className="category">
         <input

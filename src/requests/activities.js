@@ -99,7 +99,7 @@ export const breweryAPI = async () => {
 export const artAPI = async () => {
   try {
     const response = await axios.get(
-      "https://data.cityofnewyork.us/resource/43hw-uvdj.json"
+      "https://data.cityofnewyork.us/resource/43hw-uvdj.json?$limit=25"
     );
     return response.data.map((gallery) => {
       return {
