@@ -310,3 +310,13 @@ a {
   color: var(--light-cyan);
   padding-bottom: 2rem;
 }
+
+#loading {
+  height: 2em;
+  width: 4em;
+  background-image: url('../../public/spinning-arrow.jpg');
+  mix-blend-mode: multiply;
+  margin-top: 12em;
+  padding-top: 1.7em;
+}
+
