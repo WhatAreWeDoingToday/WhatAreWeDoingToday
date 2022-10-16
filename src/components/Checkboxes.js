@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Checkboxes = () => {
   const navigate = useNavigate();
@@ -12,8 +12,9 @@ const Checkboxes = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    //create list from state
-    navigate("/activity", { state: { art, alcohol, outdoor, indoor } });
+    navigate('/activity', {
+      state: { art, alcohol, outdoor, indoor },
+    });
   };
 
   return (
