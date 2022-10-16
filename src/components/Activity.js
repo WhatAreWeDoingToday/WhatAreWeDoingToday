@@ -22,7 +22,10 @@ const Activity = () => {
   useEffect(() => {
     if (!art && !alcohol && !outdoor && !indoor) {
       //seatGeekAPI();
-      npsAPI();
+      //npsAPI();
+      //recreationalAPI();
+      //breweryAPI();
+      artAPI();
     }
   }, []);
 

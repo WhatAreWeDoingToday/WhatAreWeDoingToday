@@ -31,22 +31,19 @@ export const npsAPI = async () => {
     const response = await axios.get(
       `https://developer.nps.gov/api/v1/parks?stateCode=ny&api_key=${NPS_API}`
     );
-    console.log(response.data);
-    console.log(
-      response.data.data.map((park) => {
-        return {
-          type: "PARK",
-          time: null,
-          place: null,
-          website: park.url,
-          location: "NY",
-          name: park.fullName,
-          description: park.description,
-          cost: false,
-        };
-      })
-    );
-    return response.data;
+
+    return response.data.data.map((park) => {
+      return {
+        type: "PARK",
+        time: null,
+        place: null,
+        website: park.url,
+        location: "NY",
+        name: park.fullName,
+        description: park.description,
+        cost: false,
+      };
+    });
   } catch (error) {
     console.error("NPS💀", error);
   }
@@ -58,50 +55,65 @@ export const recreationalAPI = async () => {
     const response = await axios.get(
       `https://ridb.recreation.gov/api/v1/recareas?limit=50&offset=0&state=NY&lastupdated=10-01-2018&apikey=${RECREATIONAL_API}`
     );
-    return response.data;
+
+    return response.data.RECDATA.map((park) => {
+      return {
+        type: "PARK",
+        time: null,
+        place: null,
+        website: null,
+        location: "NY",
+        name: park.RecAreaName,
+        description: park.RecAreaDescription,
+        cost: false,
+      };
+    });
   } catch (error) {
     console.error("RECREATIONAL💀", error);
   }
 };
-/**
- "RECDATA": [
-    {"RecAreaName":
-    "RecAreaDirections": 
-  */
 
 export const breweryAPI = async () => {
   try {
     const response = await axios.get(
       "https://api.openbrewerydb.org/breweries?by_state=new_york"
     );
-    return response.data;
+
+    return response.data.map((brewery) => {
+      return {
+        type: "BREWERY",
+        time: null,
+        place: null,
+        website: brewery.website_url,
+        location: `${brewery.city}, NY`,
+        name: brewery.name,
+        description: null,
+        cost: true,
+      };
+    });
   } catch (error) {
     console.error("BREWERY💀", error);
   }
 };
-/*
-objs in an array
-name": "12 Gates Brewing Company",
-website_url": "http://www.12gatesbrewing.com",
-  "city": "Williamsville",
-    "state": "New York",
-*/
 
 export const artAPI = async () => {
   try {
     const response = await axios.get(
       "https://data.cityofnewyork.us/resource/43hw-uvdj.json"
     );
-    return response.data;
+    return response.data.map((gallery) => {
+      return {
+        type: "ART GALLERY",
+        time: null,
+        place: null,
+        website: gallery.url,
+        location: `${gallery.city}, NY`,
+        name: gallery.name,
+        description: null,
+        cost: false,
+      };
+    });
   } catch (error) {
     console.error("ART💀", error);
   }
 };
-/**
- [
-  {
-    "the_geom": {
-        "name": "O'reilly William & Co Ltd",
-    "url": "http://www.nyc.com/arts__attractions/oreilly_william__co_ltd.806/whats_nearby.aspx",
-    city:
- */
