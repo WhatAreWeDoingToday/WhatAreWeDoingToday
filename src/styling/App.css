@@ -269,6 +269,7 @@ input:checked ~label{
 .moreInfo .infoName {
   font-weight: bold;
   font-size: 1rem;
+  text-align: center;
 }
 .moreInfo .info .infoLocation{
   margin-top: 1rem;
