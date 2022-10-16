@@ -20,6 +20,7 @@ const Activity = () => {
 
   const [flipped, setFlipped] = useState(false);
   const [options, setOptions] = useState([]);
+  const [picked, setPicked] = useState({});
 
   const { art, alcohol, outdoor, indoor } = location.state;
 
@@ -49,9 +50,23 @@ const Activity = () => {
     };
   }, []);
 
-  const handleNextClick = () => {
-    //this will pick another activity based on current state
+  useEffect(() => {
+    if (options.length) pickActivity();
+  }, [options]); //whenever options update, this will run-hannah told yeji
+
+  const pickActivity = () => {
+    const max = options.length - 1;
+    const num = Math.round(Math.random() * max);
+    console.log("pick actvity");
+    setPicked(options[num]);
   };
+
+  const handleNextClick = () => {
+    console.log("handleNextClick");
+    pickActivity();
+  };
+
+  console.log(picked);
 
   return (
     <div className="activity">
@@ -65,7 +80,11 @@ const Activity = () => {
       </button>
 
       <div>
-        {!flipped ? <BasicInfo handleClick={handleNextClick} /> : <MoreInfo />}
+        {!flipped ? (
+          <BasicInfo handleNextClick={handleNextClick} />
+        ) : (
+          <MoreInfo />
+        )}
         <button
           className="flippedButton flipCard"
           type="button"
