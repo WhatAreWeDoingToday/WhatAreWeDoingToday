@@ -222,12 +222,19 @@ input:checked ~label{
   box-shadow: var(--box-shadow);
 }
 
+
 .basicInfo h1 {
   text-align: center;
   font-size: 1rem;
-  letter-spacing: 0.25rem;
+  letter-spacing: .1rem;
   color:hsl(150, 100%, 66%);
   padding: 2.5rem;
+}
+
+.basicInfo p {
+  padding: 3rem;
+  margin-bottom: 4rem;
+  text-align: center;
 }
 
 .moreInfo{
@@ -239,15 +246,37 @@ input:checked ~label{
   border-radius: 1rem;
   background-color: var(--dark-grayish-blue) ;
   color: white;
+  line-height: 1.5rem;
   box-shadow: var(--box-shadow);
-}
+  overflow-y: scroll;
 
+}
+.moreInfo .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
 .moreInfo h1 {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.5rem;
+
   letter-spacing: 0.25rem;
   color:hsl(150, 100%, 66%);
   padding: 2.5rem;
+}
+
+.moreInfo .infoName {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.moreInfo .info .infoLocation{
+  margin-top: 1rem;
+}
+.moreInfo .info .description {
+  font-size: 0.80rem;
+  text-align: justify;
+  padding: 1rem 2.5rem 1rem 2.5rem;
 }
 
 .flippedButton {
@@ -263,7 +292,7 @@ input:checked ~label{
 }
 
 .skipButton{
-  width: 6rem;
+  width: 10rem;
   height: 3rem;
   display: flex;
   align-items: center;
@@ -274,4 +303,10 @@ input:checked ~label{
   border-radius: 0.5rem;
   border-color: white;
   margin-top: 1rem;
+}
+
+a {
+  font-weight: bold;
+  color: var(--light-cyan);
+  padding-bottom: 2rem;
 }
