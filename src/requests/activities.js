@@ -1,4 +1,5 @@
 import axios from "axios";
+import { seatGeekCapitalize } from "./helperFunctions";
 
 export const seatGeekAPI = async () => {
   try {
@@ -6,26 +7,37 @@ export const seatGeekAPI = async () => {
     const response = await axios.get(
       `https://api.seatgeek.com/2/events?client_id=${SEATGEEK_API}&lat=40.7484&lon=-73.9857&range=150mi`
     );
-    return response.data;
+
+    return response.data.events.map((event) => {
+      return {
+        type: seatGeekCapitalize(event.type),
+        time: event.datetime_utc.slice(11, 16),
+        place: event.venue.name,
+        website: event.venue.url,
+        location: event.venue.display_location,
+        name: event.short_title,
+        description: null,
+        cost: true,
+      };
+    });
   } catch (error) {
     console.error("SEATGEEK💀", error);
   }
 };
-
-/** response.data.events.map() (events is an array)
- * "type": "concert",
-    "datetime_utc": "2022-10-15T07:30:00",
-    venue[name]
-    venue[url]
-    venue[display_location]
-    short_title
- */
 
 export const npsAPI = async () => {
   try {
     const NPS_API = process.env.REACT_APP_NPS_API;
     const response = await axios.get(
       `https://developer.nps.gov/api/v1/parks?stateCode=ny&api_key=${NPS_API}`
+    );
+    console.log(response.data);
+    console.log(
+      response.data.map((park) => {
+        return {
+          type: "PARK",
+        };
+      })
     );
     return response.data;
   } catch (error) {
@@ -82,7 +94,6 @@ export const artAPI = async () => {
     const response = await axios.get(
       "https://data.cityofnewyork.us/resource/43hw-uvdj.json"
     );
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error("ART💀", error);

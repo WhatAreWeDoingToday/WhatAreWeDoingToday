@@ -1,12 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  seatGeekAPI,
-  npsAPI,
-  recreationalAPI,
-  breweryAPI,
-  artAPI,
-} from "../requests/activities";
 
 const Checkboxes = () => {
   const navigate = useNavigate();
@@ -18,9 +11,8 @@ const Checkboxes = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    artAPI();
-    //create list from state
 
+    //create list from state
     navigate("/activity", { state: { art, alcohol, outdoor, indoor } });
   };
 
@@ -33,7 +25,7 @@ const Checkboxes = () => {
           checked={art}
           onChange={() => setArt(!art)}
         />
-        <label htmlFor="artsy">Feeling artsy?</label>
+        <label htmlFor="artsy">Feeling artsy? 🎨</label>
       </div>
       <div className="category">
         <input
@@ -42,7 +34,7 @@ const Checkboxes = () => {
           checked={alcohol}
           onChange={() => setAlcohol(!alcohol)}
         />
-        <label htmlFor="alcohol">Feeling tipsy?</label>
+        <label htmlFor="alcohol">Feeling tipsy? 🍸</label>
       </div>
       <div className="category">
         <input
@@ -51,7 +43,7 @@ const Checkboxes = () => {
           checked={outdoor}
           onChange={() => setOutdoor(!outdoor)}
         />
-        <label htmlFor="outdoorsy">Feeling outdoorsy?</label>
+        <label htmlFor="outdoorsy">Feeling outdoorsy? 🌳</label>
       </div>
       <div className="category">
         <input
@@ -60,11 +52,11 @@ const Checkboxes = () => {
           checked={indoor}
           onChange={() => setIndoor(!indoor)}
         />
-        <label htmlFor="indoorsy">Feeling indoorsy?</label>
+        <label htmlFor="indoorsy">Feeling indoorsy? 🎤</label>
       </div>
-      <div className = "horizontalSeperation"></div>
-      <div className = "buttonContainer">
-        <input className ="submitButton" type="submit" />
+      <div className="horizontalSeperation"></div>
+      <div className="buttonContainer">
+        <input className="submitButton" type="submit" />
       </div>
     </form>
   );
