@@ -18,6 +18,8 @@ We used five third-party APIs:
 
 This site was created using React.
 
+Checkout out our [video📺](https://www.youtube.com/watch?v=G3xUeQtOHLk) to learn more about our app!
+
 ## Developers :nerd_face:
 
 [Yeji](https://github.com/yejijang95) <br />
