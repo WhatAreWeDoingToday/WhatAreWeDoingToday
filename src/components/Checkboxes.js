@@ -1,5 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {
+  seatGeekAPI,
+  npsAPI,
+  recreationalAPI,
+  breweryAPI,
+  artAPI,
+} from '../requests/activities';
 
 const Checkboxes = () => {
   const navigate = useNavigate();
@@ -8,13 +15,43 @@ const Checkboxes = () => {
   const [alcohol, setAlcohol] = useState(false);
   const [outdoor, setOutdoor] = useState(false);
   const [indoor, setIndoor] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [options, setOptions] = useState([]);
 
-  const handleSubmit = (event) => {
+  useEffect(() => {
+    if (submitted) {
+      navigate('/activity', {
+        state: { options },
+      });
+    }
+  }, [submitted]);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    navigate('/activity', {
-      state: { art, alcohol, outdoor, indoor },
-    });
+    let seatGeek = indoor ? await seatGeekAPI() : [];
+    let nps = outdoor ? await npsAPI() : [];
+    let recreational = outdoor ? await recreationalAPI() : [];
+    let brewery = alcohol ? await breweryAPI() : [];
+    let artGallery = art ? await artAPI() : [];
+
+    if (!art && !alcohol && !outdoor && !indoor) {
+      seatGeek = await seatGeekAPI();
+      nps = await npsAPI();
+      recreational = await recreationalAPI();
+      brewery = await breweryAPI();
+      artGallery = await artAPI();
+    }
+
+    setOptions([
+      ...seatGeek,
+      ...nps,
+      ...recreational,
+      ...brewery,
+      ...artGallery,
+    ]);
+
+    setSubmitted(true);
   };
 
   return (
