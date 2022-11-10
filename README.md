@@ -9,7 +9,7 @@ We wanted to create an app to encourage people to leave their home, explore thei
 
 * **A user can pick from one of our four categories - arts, parks, events, and breweries - based on their current mood, and we will suggest an activity. _Simple as that!_**
   * If the user is interested in the suggested activity, they can find out more information, such as the location, price, and description, by flipping over the "card"
-  * If they aren't interested, they can keep shuffling through different suggestions or go back and rchange their interest categories.
+  * If they aren't interested, they can keep shuffling through different suggestions or go back and change their interest categories.
 
 ## :computer:
 
