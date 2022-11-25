@@ -10,7 +10,7 @@ We wanted to create an app to encourage people to leave their home, explore thei
   * If the user is interested in the suggested activity, they can find out more information, such as the location, price, and description, by flipping over the "card"
   * If they aren't interested, they can keep shuffling through different suggestions or go back and change their interest categories.
   
-You can view _What Are We Doing Today_ by clicking [here](https://whatarewedoingtoday.github.io/WhatAreWeDoingToday/) or by cloning the repo and running 'npm install' > 'npm run start'
+You can view _What Are We Doing Today_ by clicking [here](https://whatarewedoingtoday.github.io/WhatAreWeDoingToday/) or locally by cloning the repo and running `npm install` > `npm run start`
 
 ## :computer:
 
