@@ -1,15 +1,16 @@
 # What Are We Doing Today? 🤷🏻‍♀️
 
-We created this app for the 2022 Technica Hackathon! 
-💪🏼 This app was created in less than 24 hours! 💪🏼 
+💪🏼 This app was created for the 2022 Technical Hackathon in less than 24 hours! 💪🏼 
 
 During the COVID-19 pandemic, lots of outlets for individuals closed. Self-care became more difficult, as people were not able to leave their homes and see others. This was confounded by the closure of many in-person activities (such as universities, workplaces) that, though we wouldn't think of them as self-care, allowed us to interact with others. [According to WHO](https://www.who.int/news/item/02-03-2022-covid-19-pandemic-triggers-25-increase-in-prevalence-of-anxiety-and-depression-worldwide#:~:text=In%20the%20first%20year%20of,Health%20Organization%20(WHO)%20today.), the global prevalence of anxiety and depression increased by 25% since the COVID-19 pandemic.
 
-We wanted to create an app to encourage people to leave their home, explore their interests, and have fun! Since feeling of anxiety and depression can impact our decision-making ability and motivation, we kept the UI simple. Our app ties in these two ideas by encouring taking a break with a simple easy-to-use design. 
+We wanted to create an app to encourage people to leave their home, explore their interests, and have fun! Since feeling of anxiety and depression can impact our decision-making ability and motivation, we kept the UI simple.
 
 * **A user can pick from one of our four categories - arts, parks, events, and breweries - based on their current mood, and we will suggest an activity. _Simple as that!_**
   * If the user is interested in the suggested activity, they can find out more information, such as the location, price, and description, by flipping over the "card"
   * If they aren't interested, they can keep shuffling through different suggestions or go back and change their interest categories.
+  
+You can view _What Are We Doing Today_ by clicking [here](https://whatarewedoingtoday.github.io/WhatAreWeDoingToday/) or by cloning the repo and running 'npm install' > 'npm run start'
 
 ## :computer:
 
